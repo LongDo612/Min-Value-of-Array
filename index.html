@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        let array1 = [3, 5, 1, 8, -3, 7, 8];
+        let array2 = [7, 12, 6, 9, 20, 56, 89];
+        let array3 = [];
+        let array4 = [0, 0, 0, 0, 0, 0];
+
+        let findIndexMin = (a) => {
+            let min = a[0];
+            let index;
+            if (a.length==0)
+                return -1;
+            for (let i=0;i<a.length;i++){
+                if(a[i] < min){
+                    index = i;
+                }
+            }
+            return index;
+        }
+
+        let displayArray = (a) => {
+            if (findIndexMin(a)==-1)
+                document.write("This array is empty.")
+            for (let i in a){
+                document.write(a[i] + "<br>");
+            }
+        }
+
+        let main = () => {
+            document.write("Array 1: " +"<br>");
+            displayArray(array1);
+            document.write("<br><br>");
+            document.write("Array 2: " +"<br>");
+            displayArray(array2);
+            document.write("<br><br>");
+            document.write("Array 3: " +"<br>");
+            displayArray(array3);
+            document.write("<br><br>");
+            document.write("Array 4: " +"<br>");
+            displayArray(array4);
+            document.write("<br><br>");
+            document.write("Array 1 Min value: " +array1[findIndexMin(array1)]);
+            document.write("<br><br>");
+            document.write("Array 2 Min value: " +array2[findIndexMin(array2)]);
+            document.write("<br><br>");
+            document.write("Array 4 Min value: " +array4[findIndexMin(array4)]);
+            document.write("<br><br>");
+        }
+
+        main();
+    </script>
+</body>
+</html>
